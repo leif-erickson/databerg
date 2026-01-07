@@ -1,0 +1,9 @@
+# requirements-monitor.txt
+requests
+docker
+statsmodels
+pandas
+numpy
+scipy
+prometheus_client
+psycopg2-binary

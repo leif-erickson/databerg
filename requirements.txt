@@ -1,0 +1,21 @@
+# requirements.txt
+fastapi
+uvicorn
+sqlmodel
+psycopg2-binary
+pyiceberg
+boto3
+pydantic
+prometheus-fastapi-instrumentator
+python-jose[cryptography]
+passlib[bcrypt]
+duckdb
+polars
+langchain
+langchain-community
+spacy
+easyocr
+torch
+transformers
+tenacity
+requests

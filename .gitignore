@@ -1,0 +1,24 @@
+# Environment
+.env
+
+# Volumes
+data/
+postgres_data/
+minio_data/
+ollama_data/
+prometheus_data/
+grafana_data/
+uptime_data/
+alertmanager_data/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.env/
+.venv/
+
+# Temporary files
+/tmp/
+*.parquet
+*.duckdb
