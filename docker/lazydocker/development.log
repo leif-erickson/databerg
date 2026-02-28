@@ -1,0 +1,4 @@
+{"buildDate":"","commit":"","debug":true,"level":"info","msg":"language: C","time":"2026-01-08T19:03:12Z","version":""}
+{"buildDate":"","commit":"","debug":true,"level":"warning","msg":"docker-compose config --quiet","time":"2026-01-08T19:03:12Z","version":""}
+{"buildDate":"","commit":"","debug":true,"level":"warning","msg":"'docker-compose config --quiet': 29.379µs","time":"2026-01-08T19:03:12Z","version":""}
+{"buildDate":"","commit":"","debug":true,"level":"warning","msg":"exec: \"docker-compose\": executable file not found in $PATH","time":"2026-01-08T19:03:12Z","version":""}

@@ -1,4 +1,30 @@
 services:
+  monitor:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.monitor
+    env_file: .env
+    depends_on:
+      prometheus:
+        condition: service_healthy
+      alertmanager:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD", "true"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
   uptime-kuma:
     image: louislam/uptime-kuma:latest
     ports:
@@ -55,9 +81,19 @@ services:
         condition: on-failure
 
   lazydocker:
+    build:
+      context: https://github.com/jesseduffield/lazydocker.git
+      args:
+        BASE_IMAGE_BUILDER: golang
+        GOARCH: amd64
+        GOARM:
     image: lazyteam/lazydocker:latest
-    ports:
-      - "8081:80"
+    container_name: lazydocker
+    stdin_open: true
+    tty: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./docker/lazydocker:/.config/jesseduffield/lazydocker
     healthcheck:
       test: ["CMD", "true"]
       interval: 10s

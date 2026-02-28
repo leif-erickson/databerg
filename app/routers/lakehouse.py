@@ -5,7 +5,7 @@ from pyiceberg.schema import Schema
 from pyiceberg.types import StringType, IntegerType, NestedField, BinaryType
 from pyiceberg.table import Table
 from typing import List, Dict, Any
-from schemas.data_lake import FileAdd, FileGet, FileDelete
+from databerg.app.schemas.lakehouse import FileAdd, FileGet, FileDelete
 from auth.auth import get_current_user
 from models.user import User
 import os
